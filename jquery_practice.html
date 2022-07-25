@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Practice Round 1</title>
+
+    <script src="jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+          background-color: #F5D8D6;
+        }
+
+        #magenta-color {
+            color: #D40474;
+        }
+
+        #purple-color {
+            color: #5A04D4;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="show-button">Show Description</button>
+
+    <button id="background-magenta">Change Background to <span id="magenta-color">Magenta</span></button>
+
+    <button id="background-purple">Change Background to <span id="purple-color">Purple</span></button>
+
+    <br />
+    <br />
+
+    <label for="name">Type Your First Name</label>
+    <input id="name" type="text" />
+    <button id="submit-info">Submit</button>
+
+
+    <script>
+        $(document).ready(function () {
+
+            var body = $("body");
+
+            console.log("Webpage has been loaded.");
+
+            // JavaScript Function, executes code after some time has passed.
+            setTimeout(function () {
+                console.log("5 seconds have passed!"); 
+            }, 5000);
+
+            setTimeout(function () {
+                // .css jQuery Function, allows us to read or modify CSS of the selected element.
+                body.css("background-color", "#DCEAF5");
+            }, 10000);
+
+            // jQuery Function .click() allows us to run code whenever the selected element is clicked on.
+            $("#show-button").click(function () {
+                console.log("The button was clicked!");
+
+                // jQuery Function append() adds HTML elements to the element selected. It is added at the end of the list of children.
+                body.append("<p>This is a description of the product</p>");
+
+                // jQuery Function prepend() adds HTML elements to the element selected. It is added at the beginning of the list of children.
+                body.prepend("<h1 id='title'>Welcome to The Product</h1>");
+
+                $("#title").click(function () {
+                    $("#title").css("color", "red");
+                });
+
+                $("#background-purple").attr("disabled", "disabled");
+
+                // jQuery Function html() replaces HTML children with the specified code.
+                // body.html("<p>Everything was erased!</p>");
+            });
+
+
+            $("#background-magenta").click(function () {
+
+                $("body").css("background-color", "#D40474");
+
+            });
+
+
+            $("#background-purple").click(function () {
+
+                body.css("background-color", "#5A04D4");
+
+            });
+
+            // This section is for the form that asks for the First Name.
+            $("#submit-info").click(function () {
+
+                // Grab the value from the input box with the id name, and store that value inside of the userName variable for later use.
+                var userName = $("#name").val();
+
+                // Build a paragraph element, with the user's name.
+                var message = "<p>Welcome to my website, " + userName + "!</p>";
+
+                // Create the paragraph element that was built in the previous line, to the list of children of the body element.
+                body.append(message);
+
+                // Remove the existing value of the input, once the message has been placed on the webpage.
+                $("#name").val("");
+
+                // When selecting elements with the jQuery selector, you use CSS selectors as a string!
+                $("body div ul li");
+
+            });
+        });
+    </script>
+</body>
+</html>
