@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Example</title>
+
+    <style>
+        #container {
+            height: 400px;
+            /* width: 900px; */
+            background-color:darksalmon;
+            border: 5px solid black;
+            display: flex;
+            padding: 10px;
+            flex-wrap:wrap;
+            /* flex-direction: column; */
+        }
+
+        #first-child {
+            background-color:cornflowerblue;
+            flex-basis: 300px;
+            flex-shrink: 2;
+            flex-grow: 1;
+            order: 1;
+        }
+
+        #second-child {
+            background-color:blanchedalmond;
+            flex-basis: 300px;
+            flex-shrink: 1;
+            flex-grow: 4;
+            order: -1000;
+        }
+
+        #third-child {
+            background-color:darkolivegreen;
+            flex-basis: 300px;
+            flex-shrink: 1;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="container">
+        <div id="first-child">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic veritatis voluptatum fugit molestias libero ratione modi, explicabo laborum ab eaque sapiente unde cupiditate. Aspernatur quaerat odit quis deleniti, accusamus quo.</div>
+        <div id="second-child">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque similique quia beatae aspernatur voluptate neque non quo nihil asperiores. Quae quos dicta fugit impedit dolore vero optio dolorum ratione. Est!</div>
+        <div id="third-child">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque dolorum a doloremque ut! Facere est porro officiis, ratione incidunt odit, molestiae itaque corrupti suscipit culpa ipsum enim totam, praesentium eius?</div>
+    </div>
+
+</body>
+</html>
